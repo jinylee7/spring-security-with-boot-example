@@ -1,13 +1,14 @@
 # Spring Security with Spring Boot Stateless Authentication Example
 
-### 개요
+### Overview
 
-`Spring Boot` 기반, `Spring Security` 인증 예제다.
+This project is about `Stateless Athentication` with `Spring Boot` and `Spring Security`.
 
-1. `ID` + `Password` 기반의 Basic 인증 후, Token이 발급됨
-2. 이후 Client는 발급된 Token으로, Header 기반 인증이 가능함
-3. `Stateless Session` 이므로, AWS 환경에서 Auto Scaling 이나, MSA 인증 서버 등에서 활용 가능 하겠음.
-4. 예제에서는 발급된 Token은 Ehecache에 저장하였으나, Production Level에서는 Redis, memecached 등이 활용 가능하겠음
+1. Basic authentication with `ID` and `Password` as usal way.
+2. After basic athentication `Token` is generated for specific client.
+3. With generated `Token`, client can access any REST api in server.
+3. Basically application works with `Stateless Session` , it can be applied like auto-scaling group in AWS environment or MSA architecture.
+4. In this example, generated `Token` is stored Ehecache which is temporary memory based cache, but in production level Redis will be good replacement for any purpose.
 
 ### Dependecy
 ```gradle
